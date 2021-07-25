@@ -1,4 +1,4 @@
-# Rails chat webapp using websockets
+# Ruby on Rails chat-webapp using websockets
 
 Ruby version: '2.6.8'<br/>
 Rails Version: '5.2.3'<br/>

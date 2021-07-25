@@ -1583,3 +1583,35 @@ RoomChannel is transmitting the subscription confirmation
 RoomChannel is streaming from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE
 Finished "/cable/" [WebSocket] for 127.0.0.1 at 2021-07-25 21:08:00 +0500
 RoomChannel stopped streaming from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE
+Started GET "/rooms/1" for 127.0.0.1 at 2021-07-25 21:20:45 +0500
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:47
+  Rendering rooms/show.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/views/rooms/_rooms.html.erb:7
+  Rendered rooms/_rooms.html.erb (3.7ms)
+  [1m[36mRoomMessage Load (0.3ms)[0m  [1m[34mSELECT "room_messages".* FROM "room_messages" WHERE "room_messages"."room_id" = ?[0m  [["room_id", 1]]
+  ↳ app/views/rooms/show.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 3], ["id", 2]]
+  ↳ app/views/rooms/show.html.erb:12
+  Rendered rooms/show.html.erb within layouts/application (23.5ms)
+  Rendered shared/_navigation_bar.html.erb (0.7ms)
+Completed 200 OK in 170ms (Views: 155.3ms | ActiveRecord: 2.0ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2021-07-25 21:20:45 +0500
+RoomChannel stopped streaming from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE
+Started GET "/cable" for 127.0.0.1 at 2021-07-25 21:20:46 +0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2021-07-25 21:20:46 +0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/channels/application_cable/connection.rb:12
+Registered connection (Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Vc2VyLzM)
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/room_channel.rb:3
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE
